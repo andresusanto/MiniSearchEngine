@@ -66,8 +66,8 @@ namespace MiniSearchEngine.Engine
                     {
                         if (line[1] == 'I')
                         {
-                            if (nowState == 'W')
-                            {
+                            //if (nowState == 'W')
+                            //{
                                 title = titleBuilder.ToString();
                                 content = contentBuilder.ToString().Trim();
 
@@ -150,13 +150,15 @@ namespace MiniSearchEngine.Engine
                                 //termTableAdapter.Update(termsDataTable);
                                 //documentTermTableAdapter.Update(documentTermDataTable);
 
-                            }
+                            //}
 
                             nowState = 'I';
                             number = Int32.Parse(line.Split(' ')[1]);
                             
                             content = "";
                             authors = "";
+                            contentBuilder = new StringBuilder("");
+                            titleBuilder = new StringBuilder("");
                         }
                         else if (line[1] == 'T')
                         {
